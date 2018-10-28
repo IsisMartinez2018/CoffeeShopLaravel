@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </li>
                     <br>
                     <li class="nav-item" style="margin-left: 25px">
-                        <a class="nav-link" href="/IM/public/orders/create">
+                        <a class="nav-link" href="/IM/public/create">
                                        
                                     Pedidos&nbsp;&nbsp;</a>
                     </li>
@@ -104,16 +104,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                             Bienvenido, &nbsp;{{ Auth::user()->name }}
+                             Bienvenido, usuario &nbsp;{{ Auth::user()->name }}
 
                         <img src="{{ URL::asset("/images/cup.png") }}" style="top: 130px; left: 650px;height: 30px; width: 30px; border:none;"></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/IM/public/login">Perfil</a>
                             
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Cerrar Sesion</a><form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                     document.getElementById('logout-form').submit();">Cerrar Sesion</a><form id="logout-form" action="{{ route('user.logout') }}" method="GET" style="display: none;">
                                         @csrf
                                     </form>
                         </div>
@@ -201,13 +201,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         incididunt ut labore et dolore magna aliqua.</p>
                     <ul class="list-unstyled">
                         <li class="mb-3 mt-4">
-                            <i class="fas fa-hand-point-right mr-3"></i>Sed do eiusmod tempor</li>
+                            <img src="{{ url('images/birthday.png') }}" style="width: 40px; height: 40px"> <strong style="color: black;">Styling any kind of birthday</strong></li>
                         <li class="mb-3">
-                            <i class="fas fa-hand-point-right mr-3"></i>Eaque ipsa quae illo</li>
+                            <img src="{{ url('images/halloween.png') }}" style="width: 40px; height: 40px"> <strong style="color: black;">Spicing up Halloween treats</strong></li>
                         <li class="mb-3">
-                            <i class="fas fa-hand-point-right mr-3"></i>Magni dolores eos qui</li>
+                            <img src="{{ url('images/christmas.png') }}" style="width: 40px; height: 40px"> <strong style="color: black;">Making up christmas sweets</strong></li>
                         <li>
-                            <i class="fas fa-hand-point-right mr-3"></i>Neque porro quism est</li>
+                            <img src="{{ url('images/event.png') }}" style="width: 40px; height: 40px"> <strong style="color: black;">Welcoming any kind of event</strong></li>
                     </ul>
                 </div>
             </div>
@@ -228,13 +228,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="section-middle">
         <div class="d-flex">
             <div class="col-md-6 left-gids-agile">
-                <i class="fas fa-coffee "></i>
-                <h4 class="bottom-title-w3ls text-dark my-4 pb-3">Duis aute irure dolor in reprehenderit </h4>
+                
+                <h4 class="bottom-title-w3ls text-dark my-4 pb-3"><img src="{{ url('images/muggy.png') }}" style="width: 40px; height: 40px"> Duis aute irure dolor in reprehenderit </h4>
                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui</p>
             </div>
             <div class="col-md-6 w3ls-right">
                 <div class="agile-width">
-                    <h4 class="bottom-title-w3ls text-dark my-4 pb-3">Duis aute irure dolor in reprehenderit </h4>
+                    <h4 class="bottom-title-w3ls text-dark my-4 pb-3"><img src="{{ url('images/beans.png') }}" style="width: 50px; height: 50px"> Duis aute irure dolor in reprehenderit </h4>
                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
                         qui
                     </p>
@@ -253,28 +253,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h5 class="tittle-w3-2 mb-md-4 mb-3 text-white">Our Features</h5>
                     <ul class="list-unstyled lists-w3lswe">
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Onsecter ing elit</li>
+                            <img src="{{ url('images/medal.png') }}" style="width: 40px; height: 40px">Onsecter ing elit</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Sed do eimod tempor</li>
+                            <img src="{{ url('images/medal.png') }}" style="width: 40px; height: 40px">Sed do eimod tempor</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Ex ea codo conseq</li>
+                            <img src="{{ url('images/medal.png') }}" style="width: 40px; height: 40px">Ex ea codo conseq</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Dolore euat nulla</li>
+                            <img src="{{ url('images/medal.png') }}" style="width: 40px; height: 40px">Dolore euat nulla</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Excepteur sint ecat</li>
+                            <img src="{{ url('images/medal.png') }}" style="width: 40px; height: 40px">Excepteur sint ecat</li>
                     </ul>
                 </div>
                 <div class="col-sm-6 services-right-w3-agile mt-sm-0 mt-4">
                     <h5 class="tittle-w3-2 mb-md-4 mb-3 text-white">Our Works</h5>
                     <ul class="list-unstyled lists-w3lswe">
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Tetur adipiscing</li>
+                            <img src="{{ url('images/quality.png') }}" style="width: 40px; height: 40px">Tetur adipiscing</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Seo eiusmod tempor</li>
+                            <img src="{{ url('images/quality.png') }}" style="width: 40px; height: 40px">Seo eiusmod tempor</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Ex commodo cont</li>
+                            <img src="{{ url('images/quality.png') }}" style="width: 40px; height: 40px">Ex commodo cont</li>
                         <li class="mb-2">
-                            <i class="fas fa-long-arrow-alt-right mr-3"></i>Dol fugiat nulla</li>
+                            <img src="{{ url('images/quality.png') }}" style="width: 40px; height: 40px">Dol fugiat nulla</li>
                     </ul>
                 </div>
             </div>
@@ -290,7 +290,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-md-4 banner_bottom_left">
                     <div class="row">
                         <div class="col-3 banner_bottom_grid_left text-center mb-3">
-                            <i class="fas fa-coffee"></i>
+                            <img src="{{ url('images/day.png') }}" style="width: 60px; height: 60px">
                         </div>
                         <div class="col-9 banner_bottom_grid_right mt-1 mb-4">
                             <h3>Services 1</h3>
@@ -301,14 +301,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-md-4 banner_bottom_left text-center mt-md-0 mt-3 mb-md-0 mb-5">
                     <img src="images/service.png" alt="" class="img-fluid">
                     <div class="banner_bottom_grid_right mt-5 mb-2">
-                        <h3>Services 2</h3>
+                        <img src="{{ url('images/smile.png') }}" style="width: 60px; height: 60px"><h3>Services 2</h3>
                     </div>
                     <p>Lorem ipsum dolor, consectetur adipiscing elit,morbi viverra lacus commodo felis semper.</p>
                 </div>
                 <div class="col-md-4 banner_bottom_left">
                     <div class="row">
                         <div class="col-3 banner_bottom_grid_left text-center mb-3">
-                            <i class="fas fa-glass-martini"></i>
+                            <img src="{{ url('images/list.png') }}" style="width: 60px; height: 60px">
                         </div>
                         <div class="col-9 banner_bottom_grid_right mt-1 mb-4">
                             <h3>Services 3</h3>
@@ -358,19 +358,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <ul class="list-unstyled">
                             <li class="mb-3">
                                 <a class="fb" href="#">
-                                    <i class="fab fa-facebook-f"></i>Like us on Facebook</a>
+                                    <i class="fab fa-facebook-f"><img src="{{ url('svg/facebook.svg') }}" style="width: 20px; height: 23px"></i>Like us on Facebook</a>
                             </li>
                             <li class="mb-3">
                                 <a class="fb1" href="#">
-                                    <i class="fab fa-twitter"></i>Follow us on Twitter</a>
+                                    <i class="fab fa-twitter"><img src="{{ url('svg/twitter.svg') }}" style="width: 20px; height: 23px"></i>Follow us on Twitter</a>
                             </li>
                             <li class="mb-3">
                                 <a class="fb2" href="#">
-                                    <i class="fab fa-google-plus-g"></i>Add us on Google Plus</a>
+                                    <i class="fab fa-google-plus-g"><img src="{{ url('svg/google-plus.svg') }}" style="width: 20px; height: 23px"></i>Add us on Google Plus</a>
                             </li>
                             <li>
                                 <a class="fb3" href="#">
-                                    <i class="fab fa-dribbble"></i>Follow us on Dribbble</a>
+                                    <i class="fab fa-dribbble"><img src="{{ url('svg/instagram.svg') }}" style="width: 20px; height: 23px"></i>Follow us on Instagram</a>
                             </li>
                         </ul>
                     </div>
@@ -378,19 +378,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <h3 class="mb-3">Address</h3>
                         <ul class="list-unstyled">
                             <li>
-                                <i class="fas fa-map-marker"></i>
+                                <img src="{{ url('images/home.png') }}" style="width: 55px; height: 55px">
                                 <p>The company name
                                     <span>Lorem ipsum dolor,</span>New York,Morris Park. </p>
                                 <div class="clearfix"></div>
                             </li>
                             <li class="my-2">
-                                <i class="fas fa-phone"></i>
-                                <p>1234567890</p>
+                                <img src="{{ url('images/map.png') }}" style="width: 35px; height: 35px">
+                                <p> &nbsp;1234567890</p>
                                 <div class="clearfix"></div>
                             </li>
                             <li>
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:info@example.com">mail@example.com</a>
+                                <img src="{{ url('images/agenda.png') }}" style="width: 25px; height: 25px">
+                                <a href="mailto:info@example.com">&nbsp; mail@example.com</a>
                                 <div class="clearfix"></div>
                             </li>
                         </ul>

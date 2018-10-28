@@ -94,7 +94,7 @@
 
                <td>
 
-              <a href="{{action('ordersController@edit', $orders->id)}}"> <p style="margin-right: 10px">Editar</p> <img src="{{ URL::asset("/images/editorial-design.png") }}" style="top: 230px; left: 810px; height: 25px; width: 25px; border:none;"></a></td>
+              <a href="{{action('ordersController@edit', $orders->id)}}"> <p style="margin-right: -1px">Editar</p> <img src="{{ URL::asset("/images/editorial-design.png") }}" style="top: 230px; left: 810px; height: 25px; width: 25px; border:none;"></a></td>
                 <td >
                   <form action="{{action('ordersController@destroy', $orders->id)}}" style="margin-right: -1px" method="post">
                     {{csrf_field()}}
