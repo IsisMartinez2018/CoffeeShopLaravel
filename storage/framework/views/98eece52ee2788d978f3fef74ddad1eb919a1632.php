@@ -33,7 +33,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Banner CSS -->
     <link rel="stylesheet" href="css/style(2).css" type="text/css" media="all" />
     <!-- Style-CSS -->
-    <link rel="stylesheet" href="{{ asset('css/fontawesome-all.min.css') }}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo e(asset('css/fontawesome-all.min.css')); ?>" rel='stylesheet' type='text/css'>
     <!-- Font-Awesome-Icons-CSS -->
     <!-- //Custom-Files -->
 
@@ -104,18 +104,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                             Bienvenido, admin &nbsp;{{ Auth::user()->name }}
+                             Bienvenido, admin &nbsp;<?php echo e(Auth::user()->name); ?>
 
-                        <img src="{{ URL::asset("/images/cup.png") }}" style="top: 130px; left: 650px;height: 30px; width: 30px; border:none;"></a>
+
+                        <img src="<?php echo e(URL::asset("/images/cup.png")); ?>" style="top: 130px; left: 650px;height: 30px; width: 30px; border:none;"></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/IM/public/login">Perfil</a>
                              <a class="dropdown-item" href="/IM/public/orders">Listado de pedidos</a>
                            
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                            <a class="dropdown-item" href="<?php echo e(route('admin.logout')); ?>"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Cerrar Sesion</a><form id="logout-form" action="{{ route('admin.logout') }}" method="GET" style="display: none;">
-                                        @csrf
+                                                     document.getElementById('logout-form').submit();">Cerrar Sesion</a><form id="logout-form" action="<?php echo e(route('admin.logout')); ?>" method="GET" style="display: none;">
+                                        <?php echo csrf_field(); ?>
                                     </form>
                         </div>
                 </li>

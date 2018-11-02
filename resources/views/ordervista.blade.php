@@ -47,7 +47,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 			<div class="book-agileinfo-form">
 				 <form action="{{url('orders')}}" method="POST">
-					
+					@if ($errors->any())
+    
+            @foreach ($errors->all() as $error)
+                <li style="color: #ec24b6;">{{ $error }}<hr></li>
+            @endforeach
+  
+@endif
 					<h2 class="sub-head-w3ls">Formulario de pedidos<img src="{{ URL::asset("/images/food-and-restaurant.png") }}" style="top: 130px; left: 650px;height: 40px; width: 40px; border:none;"></h2>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">

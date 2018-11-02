@@ -92,17 +92,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</li>
 					<br>
 					<li class="nav-item" style="margin-left: 25px">
-						<a class="nav-link" href="{{ route('orders.create') }}">Pedidos</a>
+						<a class="nav-link" href="{{ route('orders.create') }}">Pedidos&nbsp;</a>
 					</li>
 					
+					@if (Auth::guard('web')->check())
+<li class="nav-item dropdown mr-lg-4">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                             Bienvenido, usuario &nbsp;{{ Auth::user()->name }}
+
+                        <img src="{{ URL::asset("/images/cup.png") }}" style="top: 130px; left: 650px;height: 30px; width: 30px; border:none;"></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/IM/public/login">Perfil</a>
+                            
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('user.logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Cerrar Sesion</a><form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    </form>
+                        </div>
+                </li>
+
+@else
+
 					<li class="nav-item" style="margin-left: 25px">
-						<a class="nav-link" href="/IM/public/login">Login</a>
+						<a class="nav-link" href="{{ route('login')}}">Login</a>
 					</li>
 					<br>
 					<li class="nav-item" style="margin-left: 25px">
-						<a class="nav-link" href="/IM/public/register">Registrate</a>
+						<a class="nav-link" href="{{ route('register')}}">Registrate</a>
 					</li>
 
+					@endif
 				</ul>
 			</div>
 		</nav>
@@ -306,8 +329,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 banner_bottom_left">
 					<div class="row">
 						<div class="col-3 banner_bottom_grid_left text-center mb-3">
-							<i class="fas fa-coffee"></i>
-						</div>
+							 <img src="{{ url('images/day.png') }}" style="width: 60px; height: 60px">
+                      </div>
 						<div class="col-9 banner_bottom_grid_right mt-1 mb-4">
 							<h3>Services 1</h3>
 						</div>
@@ -317,15 +340,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 banner_bottom_left text-center mt-md-0 mt-3 mb-md-0 mb-5">
 					<img src="images/service.png" alt="" class="img-fluid">
 					<div class="banner_bottom_grid_right mt-5 mb-2">
-						<h3>Services 2</h3>
-					</div>
+						<img src="{{ url('images/smile.png') }}" style="width: 60px; height: 60px"><h3>Services 2</h3>
+                    </div>
 					<p>Lorem ipsum dolor, consectetur adipiscing elit,morbi viverra lacus commodo felis semper.</p>
 				</div>
 				<div class="col-md-4 banner_bottom_left">
 					<div class="row">
 						<div class="col-3 banner_bottom_grid_left text-center mb-3">
-							<i class="fas fa-glass-martini"></i>
-						</div>
+						<img src="{{ url('images/list.png') }}" style="width: 60px; height: 60px">
+                     </div>
 						<div class="col-9 banner_bottom_grid_right mt-1 mb-4">
 							<h3>Services 3</h3>
 						</div>
@@ -373,42 +396,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<h3 class="mb-3">Connect With</h3>
 						<ul class="list-unstyled">
 							<li class="mb-3">
-								<a class="fb" href="#">
-									<i class="fab fa-facebook-f"></i>Like us on Facebook</a>
-							</li>
-							<li class="mb-3">
-								<a class="fb1" href="#">
-									<i class="fab fa-twitter"></i>Follow us on Twitter</a>
-							</li>
-							<li class="mb-3">
-								<a class="fb2" href="#">
-									<i class="fab fa-google-plus-g"></i>Add us on Google Plus</a>
-							</li>
-							<li>
-								<a class="fb3" href="#">
-									<i class="fab fa-dribbble"></i>Follow us on Dribbble</a>
-							</li>
+                                <a class="fb" href="#">
+                                    <i class="fab fa-facebook-f"><img src="{{ url('svg/facebook.svg') }}" style="width: 20px; height: 23px"></i>Like us on Facebook</a>
+                            </li>
+                            <li class="mb-3">
+                                <a class="fb1" href="#">
+                                    <i class="fab fa-twitter"><img src="{{ url('svg/twitter.svg') }}" style="width: 20px; height: 23px"></i>Follow us on Twitter</a>
+                            </li>
+                            <li class="mb-3">
+                                <a class="fb2" href="#">
+                                    <i class="fab fa-google-plus-g"><img src="{{ url('svg/google-plus.svg') }}" style="width: 20px; height: 23px"></i>Add us on Google Plus</a>
+                            </li>
+                            <li>
+                                <a class="fb3" href="#">
+                                    <i class="fab fa-dribbble"><img src="{{ url('svg/instagram.svg') }}" style="width: 20px; height: 23px"></i>Follow us on Instagram</a>
+                            </li>
 						</ul>
 					</div>
 					<div class="col-lg-4 col-sm-6 w3l-footer three mt-lg-0 mt-4">
 						<h3 class="mb-3">Address</h3>
 						<ul class="list-unstyled">
-							<li>
-								<i class="fas fa-map-marker"></i>
-								<p>The company name
-									<span>Lorem ipsum dolor,</span>New York,Morris Park. </p>
-								<div class="clearfix"></div>
-							</li>
-							<li class="my-2">
-								<i class="fas fa-phone"></i>
-								<p>1234567890</p>
-								<div class="clearfix"></div>
-							</li>
-							<li>
-								<i class="fas fa-envelope"></i>
-								<a href="mailto:info@example.com">mail@example.com</a>
-								<div class="clearfix"></div>
-							</li>
+							 <li>
+                                <img src="{{ url('images/home.png') }}" style="width: 55px; height: 55px">
+                                <p>The company name
+                                    <span>Lorem ipsum dolor,</span>New York,Morris Park. </p>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li class="my-2">
+                                <img src="{{ url('images/map.png') }}" style="width: 35px; height: 35px">
+                                <p> &nbsp;1234567890</p>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <img src="{{ url('images/agenda.png') }}" style="width: 25px; height: 25px">
+                                <a href="mailto:info@example.com">&nbsp; mail@example.com</a>
+                                <div class="clearfix"></div>
+                            </li>
 						</ul>
 					</div>
 				</div>
